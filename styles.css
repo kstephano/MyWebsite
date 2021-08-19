@@ -1,11 +1,15 @@
 :root {
-  --black: #000;
-  --projects-bg: #45567d;
-  --light-grey: #303841;
-  --red: #be3144;
-  --white: #f0f0f0;
+  --clr-primary-500: #45567d;
+  --clr-accent-400: #be3144;
+  --clr-neutral-100: #f0f0f0;
+  --clr-neutral-400: #303841;
+  --clr-neutral-900: #000;
   --typewriterSpeed: 6s;
   --typewriterCharacters: 24;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #welcome-section {
@@ -15,31 +19,27 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: var(--white);
+  background-color: var(--clr-neutral-100);
 }
 
 #welcome-section > p {
   font-size: 1.5rem;
   font-weight: 100;
   font-style: italic;
-  color: var(--red);
+  color: var(--clr-accent-400);
 }
 
 #projects {
+  scroll-margin-top: 65px;
   text-align: center;
   padding: 2.5rem 1rem;
-  background: var(--projects-bg);
+  background: var(--clr-primary-500);
 }
 
 .projects-section-header {
   max-width: 640px;
   margin: 0 auto 6rem auto;
-  border-bottom: 0.2rem solid var(--white);
-}
-
-@media (max-width: 30.625em)
-.projects-grid {
-  grid-template-columns: 1fr;
+  border-bottom: 0.2rem solid var(--clr-neutral-100);
 }
 
 .projects-section-grid {
@@ -64,8 +64,7 @@
   width: auto;
   font-size: 1.5rem;
   font-family: Monospace;
-  background: var(--light-grey);
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+  background: var(--clr-neutral-400);
   border-radius: 2px;
   padding: 15px 0px 15px 0px;
   text-indent: 0.5em;
@@ -76,7 +75,7 @@
 }
 
 .code {
-  color: var(--light-grey);
+  color: var(--clr-neutral-400);
   transition: color 0.3s ease-out;
   font-family: Monospace;
 }
@@ -103,12 +102,12 @@
 }
 
 .btn-show-all:hover {
-  background: #be3144;
+  background: var(--clr-accent-400);
 }
 
 h1 {
   font-family: monospace;
-  color: var(--black);
+  color: var(--clr-neutral-900);
   font-size: 3rem;
   position: relative;
 }
@@ -124,14 +123,14 @@ h1::after {
 }
 
 h1::before {
-  background: var(--white);
+  background: var(--clr-neutral-100);
   animation:
     typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
 }
 
 h1::after {
   width: 0.125em;
-  background: var(--black);
+  background: var(--clr-neutral-900);
   animation:
     typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
     blink 800ms steps(24) infinite;
@@ -163,18 +162,12 @@ h1::after {
   }
 }
 
-@media (max-width: 28.75em)
-.nav {
-  justify-content: center;
-}
-
 ul {
   list-style: none;
 }
 
 li {
   display: list-item;
-  text-align: -webkit-match-parent;
 }
 
 * {
@@ -184,7 +177,7 @@ li {
 
 a {
   text-decoration: none;
-  color: var(--white);
+  color: var(--clr-neutral-100);
   transition: color 0.3s ease-out;
 }
 
@@ -195,17 +188,17 @@ nav a {
 }
 
 nav a:hover {
-  background-color: var(--projects-bg)
+  background-color: var(--clr-primary-500)
 }
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--red);
+  background: var(--clr-accent-400);
   box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
   z-index: 10;
 }
@@ -222,5 +215,19 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--white);
+  color: var(--clr-neutral-100);
+}
+
+@media (max-width: 28.75em)
+.nav {
+  justify-content: center;
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 6vw;
+  }
+  #welcome-section > p {
+    font-size: 4.5vw;
+  }
 }
