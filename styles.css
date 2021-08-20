@@ -29,11 +29,22 @@ html {
   color: var(--clr-accent-400);
 }
 
+#my_img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 #projects {
   scroll-margin-top: 65px;
   text-align: center;
   padding: 2.5rem 1rem;
   background: var(--clr-primary-500);
+}
+
+#welcome-section > * + * {
+  margin-top: 1rem;
 }
 
 .projects-section-header {
@@ -136,8 +147,7 @@ h1::after {
     blink 800ms steps(24) infinite;
 }
 
-#subtitle {
-  padding-top: 15px;
+#welcome-section > p {
   opacity: 0;
   transform: translateY(3rem);
   animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
